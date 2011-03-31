@@ -22,7 +22,7 @@ class Breadcrumb {
 	 * Options
 	 *
 	 */
-	private $divider 		= '&nbsp;&#8250;&nbsp;';
+	private $divider 		= ' &nbsp;&#8250;&nbsp; ';
 	private $tag_open 		= '<div id="breadcrumb">';
 	private $tag_close 		= '</div>';
 	
@@ -123,7 +123,7 @@ class Breadcrumb {
 			foreach ($this->breadcrumbs as $key => $crumb) {
 				
 				// add divider
-				$output .= $this->divider;
+				if ($key) $output .= $this->divider;
 				
 				// if last element
 				if (end(array_keys($this->breadcrumbs)) == $key) {
