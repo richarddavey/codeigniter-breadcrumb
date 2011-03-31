@@ -1,4 +1,4 @@
-# CodeIgniter-Layout
+# CodeIgniter-Breadcrumb
 
 CodeIgniter-Breadcrumb is a library that helps your build HTML breadcrumbs with CodeIgniter.
 
