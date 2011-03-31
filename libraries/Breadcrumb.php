@@ -4,10 +4,10 @@
  *
  * This class manages the breadcrumb object
  *
+ * @package		Breadcrumb
+ * @version		1.0
  * @author 		Richard Davey <info@richarddavey.com>
  * @copyright 	Copyright (c) 2011, Richard Davey
- * @package		CodeIgniter
- * @subpackage	Libraries
  * @link		https://github.com/richarddavey/codeigniter-breadcrumb
  */
 class Breadcrumb {
