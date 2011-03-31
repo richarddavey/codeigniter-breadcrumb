@@ -5,5 +5,17 @@ CodeIgniter-Breadcrumb is a library that helps your build HTML breadcrumbs with 
 
 ## Requirements
 
-1. PHP 5.1+
-2. CodeIgniter 1.6.x - 2.0-dev
+* CodeIgniter 2.0.x
+
+
+## Example
+
+// load libary
+$this->load->library('breadcrumb');
+
+// add breadcrumbs
+$this->breadcrumb->appendCrumb('Home', '/');
+$this->breadcrumb->appendCrumb('Page', '/page');
+
+// put this line in view to output
+$this->breadcrumb->output();
