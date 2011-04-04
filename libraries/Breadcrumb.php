@@ -16,15 +16,15 @@ class Breadcrumb {
 	 * Breadcrumbs stack
 	 *
      */
-	private $breadcrumbs 	= array();
+	private $breadcrumbs	= array();
 	
 	/**
 	 * Options
 	 *
 	 */
-	private $divider 		= ' &nbsp;&#8250;&nbsp; ';
-	private $tag_open 		= '<div id="breadcrumb">';
-	private $tag_close 		= '</div>';
+	private $_divider 		= ' &nbsp;&#8250;&nbsp; ';
+	private $_tag_open 		= '<div id="breadcrumb">';
+	private $_tag_close 	= '</div>';
 	
 	/**
 	 * Constructor
@@ -57,9 +57,9 @@ class Breadcrumb {
 		{
 			foreach ($params as $key => $val)
 			{
-				if (in_array($key, array('divider', 'tag_open', 'tag_close')) AND isset($this->$key))
+				if (isset($this->{'_' . $key}))
 				{
-					$this->$key = $val;
+					$this->{'_' . $key} = $val;
 				}
 			}
 		}
@@ -117,13 +117,13 @@ class Breadcrumb {
 		if ($this->breadcrumbs) {
 		
 			// set output variable
-			$output = $this->tag_open;
+			$output = $this->_tag_open;
 			
 			// add html to output
 			foreach ($this->breadcrumbs as $key => $crumb) {
 				
 				// add divider
-				if ($key) $output .= $this->divider;
+				if ($key) $output .= $this->_divider;
 				
 				// if last element
 				if (end(array_keys($this->breadcrumbs)) == $key) {
@@ -136,7 +136,7 @@ class Breadcrumb {
 			}
 			
 			// return html
-			return $output . $this->tag_close . PHP_EOL;
+			return $output . $this->_tag_close . PHP_EOL;
 		}
 		
 		// return blank string
