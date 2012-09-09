@@ -14,7 +14,9 @@
 |   ['tag_close'] 	The closing tag placed on the right side of the breadcrumb.
 |
 */
-
+$config['divider']   = ' &nbsp;&#8250;&nbsp; ';
+$config['tag_open']  = '<div id="breadcrumb">';
+$config['tag_close'] = '</div>';
 
 /* End of file breadcrumb.php */
 /* Location: ./application/config/breadcrumb.php */

@@ -26,6 +26,12 @@ class Breadcrumb {
 	private $_tag_open 		= '<div id="breadcrumb">';
 	private $_tag_close 	= '</div>';
 	
+    /**
+     * CodeIgniter Instance
+     *
+     */
+    private $_ci;
+    
 	/**
 	 * Constructor
 	 *
@@ -34,10 +40,18 @@ class Breadcrumb {
 	 */
 	public function __construct($params = array())
 	{
+        $this->_ci = get_instance();
+        $this->_ci->config->load('breadcrumb', TRUE);
+        $config = $this->_ci->config->item('breadcrumb');
+                
 		if (count($params) > 0)
 		{
 			$this->initialize($params);
 		}
+        else
+        {
+            $this->initialize($config);
+        }
 		
 		log_message('debug', "Breadcrumb Class Initialized");
 	}
@@ -63,6 +77,8 @@ class Breadcrumb {
 				}
 			}
 		}
+        
+        var_dump($this->_divider, $this->_tag_open, $this->_tag_close);
 	}
 	
 	// --------------------------------------------------------------------
